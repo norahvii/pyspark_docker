@@ -1,0 +1,6 @@
+jupyter
+jupyterlab
+pyspark==${SPARK_VERSION}
+numpy
+pandas
+scikit-learn

@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  jupyter-pyspark:
+    container_name: jupyter-pyspark-container
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
